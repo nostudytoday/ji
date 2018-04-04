@@ -41,7 +41,7 @@ jQuery('#tab-title span').click(function(){
 </script>
 <div class='login'>
   <div class='login_title'>
-  <div id="tab-title"><h3><span class="selected">登录</span><span>注册</span><span>忘记密码</span></h3></div>
+  <!-- <div id="tab-title"><h3><span class="selected">登录</span><span>注册</span><span>忘记密码</span></h3></div>-->
   </div>
 
   <div id="tab-content">

@@ -116,9 +116,13 @@ fieldset div {
 if($_POST['submit']){
   $username=str_replace(" ","",$_POST['username']);
    //去除空格
-     $sql="SELECT * FROM jizhang_user WHERE username = '$username'";
-     $query=mysql_query($sql);
-        $exist=is_array($row=mysql_fetch_array($query));
+	$stmt = $dbh->prepare("SELECT * FROM jizhang_user WHERE username = ?");
+	if ($stmt->execute($username)){
+		$row = $stmt->fetch();
+		$exist = is_array($row);
+     //$sql="SELECT * FROM jizhang_user WHERE username = '$username'";
+     //$query=mysql_query($sql);
+        //$exist=is_array($row=mysql_fetch_array($query));
          //判断是否存在这样一个用户
             $exist2=$exist?md5($_POST['password'])==$row['password']:FALSE;
             //判断密码  
