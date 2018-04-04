@@ -54,11 +54,11 @@ $(AddButton).click(function (e)  //on add input button click
             FieldCount++; //text box added increment
             //add input box
             $(InputsWrapper).append('<div><input name="zhifu[]" id="zhifu" type="text" value="1" style="display:none;"/><font color="MediumSeaGreen">金额：</font><input type="text" name="money[]" id="money" value="" style="width:70px;"/><font color="MediumSeaGreen"> 分类：</font><select name="classid[]" id="classid" style="height:26px;"><?php
-		  	$sql="select * from jizhang_account_class where classtype=1 and ufid=$_SESSION[uid]";
+		  	$sql="select * from jizhang_account_class where classtype=1 and ufid=$_SESSION[uid] order by classname";
 			$query=mysql_query($sql);
 			while($acclass=mysql_fetch_array($query)){
 				echo "<option value=$acclass[classid]>$acclass[classname]</option>";
-			} ?></select><font color="MediumSeaGreen"> 备注：</font><input name="remark[]" type="text" id="remark" style="width:120px;"/> 时间：<input type="text" name="time[]" id="time" value="<?php $xz=date("Y-m-d H:i"); echo "$xz"; ?>" style="width:120px;"/><a href="#" class="removeclass"> 删除</a><br /><br /></div>');
+			} ?></select><font color="MediumSeaGreen"> 备注：</font><input name="remark[]" type="text" id="remark" style="width:120px;"/> 时间：<input type="date" name="time[]" id="time" value="<?php $xz=date("Y-m-d H:i"); echo "$xz"; ?>" style="width:120px;"/><a href="#" class="removeclass"> 删除</a><br /><br /></div>');
             x++; //text box increment
         }
 return false;
@@ -76,11 +76,11 @@ $(AddButton1).click(function (e)  //on add input button click
             FieldCount++; //text box added increment
             //add input box
             $(InputsWrapper1).append('<div><input name="zhifu[]" id="zhifu" type="text" value="2" style="display:none;"/><font color="red">金额：</font><input type="text" name="money[]" id="money" value="" style="width:70px;"/><font color="red"> 分类：</font><select name="classid[]" id="classid" style="height:26px;"><?php
-		  	$sql="select * from jizhang_account_class where classtype=2 and ufid=$_SESSION[uid]";
+		  	$sql="select * from jizhang_account_class where classtype=2 and ufid=$_SESSION[uid] order by classname";
 			$query=mysql_query($sql);
 			while($acclass=mysql_fetch_array($query)){
 				echo "<option value=$acclass[classid]>$acclass[classname]</option>";
-			} ?></select><font color="red"> 备注：</font><input name="remark[]" type="text" id="remark" style="width:120px;"/> 时间：<input type="text" name="time[]" id="time" value="<?php $xz=date("Y-m-d H:i"); echo "$xz"; ?>" style="width:120px;"/><a href="#" class="removeclass"> 删除</a><br /><br /></div>');
+			} ?></select><font color="red"> 备注：</font><input name="remark[]" type="text" id="remark" style="width:120px;"/> 时间：<input type="date" name="time[]" id="time" value="<?php $xz=date("Y-m-d H:i"); echo "$xz"; ?>" style="width:120px;"/><a href="#" class="removeclass"> 删除</a><br /><br /></div>');
             y++; //text box increment
         }
 return false;
@@ -108,20 +108,20 @@ return false;
 <form id="myform2" name="myform2" method="get" action="" onsubmit="return checkpost2();">
 <div id="InputsWrapper1">  
 <div><input name="zhifu[]" id="zhifu" type="text" value="2" style="display:none;"/><font color="red">金额：</font><input type="text" name="money[]" id="money" value="" style="width:70px;"/><font color="red"> 分类：</font><select name="classid[]" style="height:26px;"><?php
-		  	$sql="select * from jizhang_account_class where classtype=2 and ufid='$_SESSION[uid]'";
+		  	$sql="select * from jizhang_account_class where classtype=2 and ufid='$_SESSION[uid]' order by classname";
 			$query=mysql_query($sql);
 			while($acclass=mysql_fetch_array($query)){
 				echo "<option value='$acclass[classid]'>$acclass[classname]</option>";
 			}
-		  ?></select><font color="red"> 备注：</font><input name="remark[]" type="text" style="width:120px;"/> 时间：<input type="text" name="time[]" value="<?php echo date("Y-m-d H:i"); ?>" style="width:120px;"/><a href="#" class="removeclass"> 删除</a><br /><br /></div>  
+		  ?></select><font color="red"> 备注：</font><input name="remark[]" type="text" style="width:120px;"/> 时间：<input type="date" name="time[]" value="<?php echo date("Y-m-d H:i"); ?>" style="width:120px;"/><a href="#" class="removeclass"> 删除</a><br /><br /></div>  
 </div>
 <div><input name="zhifu[]" id="zhifu" type="text" value="2" style="display:none;"/><font color="red">金额：</font><input type="text" name="money[]" id="money" value="" style="width:70px;"/><font color="red"> 分类：</font><select name="classid[]" style="height:26px;"><?php
-		  	$sql="select * from jizhang_account_class where classtype=2 and ufid='$_SESSION[uid]'";
+		  	$sql="select * from jizhang_account_class where classtype=2 and ufid='$_SESSION[uid]' order by classname";
 			$query=mysql_query($sql);
 			while($acclass=mysql_fetch_array($query)){
 				echo "<option value='$acclass[classid]'>$acclass[classname]</option>";
 			}
-		  ?></select><font color="red"> 备注：</font><input name="remark[]" type="text" style="width:120px;"/> 时间：<input type="text" name="time[]" value="<?php echo date("Y-m-d H:i"); ?>" style="width:120px;"/><a href="#" class="removeclass"> 删除</a><br /><br /></div>  
+		  ?></select><font color="red"> 备注：</font><input name="remark[]" type="text" style="width:120px;"/> 时间：<input type="date" name="time[]" value="<?php echo date("Y-m-d H:i"); ?>" style="width:120px;"/><a href="#" class="removeclass"> 删除</a><br /><br /></div>  
 </div>
 <div><input name="zhifu[]" id="zhifu" type="text" value="2" style="display:none;"/><font color="red">金额：</font><input type="text" name="money[]" id="money" value="" style="width:70px;"/><font color="red"> 分类：</font><select name="classid[]" style="height:26px;"><?php
 		  	$sql="select * from jizhang_account_class where classtype=2 and ufid='$_SESSION[uid]'";

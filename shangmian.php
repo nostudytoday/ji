@@ -17,7 +17,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- 包含 bootstrap 样式表 -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
-<title>php mysql 简单记账xptt程序</title>
+<title>USFashiongo</title>
 </head>
 <body>
 <?php

@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PHP记账程序-xptt多用户版</title>
+<title>USFashiongo</title>
 
 <link rel="stylesheet" type="text/css" href="css/default.css">
 <script type="text/javascript" src="js/jquery.min.js"></script>
@@ -116,7 +116,6 @@ jQuery('#tab-title span').click(function(){
     <img src='img/tick.png'>
     </div>
   <div class='login_fields__submit'>
-    <input type='submit' value='提交' name='Submitzhuce'>
   </div>
 </div>
 
@@ -139,7 +138,6 @@ jQuery('#tab-title span').click(function(){
     </div>
     </input>
     <div class='login_fields__submit'>
-    <input type='submit' value='找回' name='submitmima'>
     </div>
   </div>
 </div>

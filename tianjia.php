@@ -49,10 +49,10 @@ if($_GET[Submit]){
         </tr>
 <tr><td bgcolor="#FFFFFF">
 <form id="form2" name="myform2" method="get" onsubmit="return checkpost2();">
-          　<font color="red">金额：</font><input name="money" type="text" id="money" size="8" /><div style="display:none;"><input name="zhifu" type="text" id="zhifu" value="2" size="8" /></div>
+          　<font color="red">金额：</font><input name="money" type="number" id="money" size="8" /><div style="display:none;"><input name="zhifu" type="text" id="zhifu" value="2" size="8" /></div>
           　<font color="red">分类：</font><select name="classid" id="classid" style="height:26px;">
               <?php
-		  	$sql="select * from jizhang_account_class where classtype=2 and ufid='$_SESSION[uid]'";
+		  	$sql="select * from jizhang_account_class where classtype=2 and ufid='$_SESSION[uid]' order by classname";
 			$query=mysql_query($sql);
 			while($acclass=mysql_fetch_array($query)){
 				echo "<option value='$acclass[classid]'>$acclass[classname]</option>";
@@ -61,7 +61,7 @@ if($_GET[Submit]){
               </select> <font color="red"><a href="fenlei.php" style="color:#ccc;">添加分类</a></font>
           <br /><br />　备注：
             <input name="remark" type="text" id="remark" /> <font color="#ccc">方便搜索</font>
-         <br /><br />　时间：<input type="text" name="time" id="time" value="<?php $xz=date("Y-m-d H:i");;echo "$xz"; ?>"/>
+         <br /><br />　时间：<input type="date" name="time" id="time" value="<?php $xz=date("Y-m-d H:i");;echo "$xz"; ?>"/>
             <input name="Submit" type="submit" id="Submit" value="记账" /> <a href="piliangtianjia.php" style="color:#ccc;">批量</a>
   </form>
 </td></tr>
@@ -77,7 +77,7 @@ if($_GET[Submit]){
          　<font color="MediumSeaGreen">分类：</font>
             <select name="classid" id="classid" style="height:26px;">
               <?php
-		  	$sql="select * from jizhang_account_class where classtype=1 and ufid='$_SESSION[uid]'";
+		  	$sql="select * from jizhang_account_class where classtype=1 and ufid='$_SESSION[uid]' order by classname";
 			$query=mysql_query($sql);
 			while($acclass=mysql_fetch_array($query)){
 				echo "<option value='$acclass[classid]'>$acclass[classname]</option>";
@@ -86,7 +86,7 @@ if($_GET[Submit]){
               </select> <font color="MediumSeaGreen"><a href="fenlei.php" style="color:#ccc;">添加分类</a></font>
           <br /><br />　备注：
             <input name="remark" type="text" id="remark" /> <font color="#ccc">方便搜索</font>
-          <br /><br />　时间：<input type="text" name="time" id="time" value="<?php $xz=date("Y-m-d H:i");;echo "$xz"; ?>"/>
+          <br /><br />　时间：<input type="date" name="time" id="time" value="<?php $xz=date("Y-m-d H:i");;echo "$xz"; ?>"/>
             <input type="submit" name="Submit" value="记账" /> <a href="piliangtianjia.php" style="color:#ccc;">批量</a>
  </form>
         
