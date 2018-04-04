@@ -87,7 +87,7 @@ location.href="xiugai.php?p="+oTxt1.value+"";
         <td bgcolor='#FFFFFF'>
    <form method=get action=''>
 <INPUT TYPE='hidden' name='id' value=".$row[acid].">
-金额：<input type=number name='jine' value=".$row[acmoney]."><br /><br />
+金额：<input type='number' step='.01' name='jine' value=".$row[acmoney]."><br /><br />
 账目分类：".$classinfo[classname]."<br /><br />
 收入/支出：";
 if($classinfo[classtype]==1){
