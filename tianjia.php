@@ -117,8 +117,8 @@ $query=mysql_query($query_sql);
 			echo "<table width='100%' border='0' align='left' cellpadding='5' cellspacing='1' bgcolor='#B3B3B3' class='table table-striped table-bordered'>
                 <tr>
                 <th bgcolor='#EBEBEB'>分类</th>
-                <th bgcolor='#EBEBEB'>收支</th>
                 <th bgcolor='#EBEBEB'>金额</th>
+                <th bgcolor='#EBEBEB'>收支</th>
                 <th bgcolor='#EBEBEB'>时间</th>
                 <th bgcolor='#EBEBEB'>备注</th>
                 <th bgcolor='#EBEBEB'>操作</th>
