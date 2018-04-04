@@ -48,7 +48,7 @@ if($_POST[Submit]){
         <td bgcolor="#EBEBEB">　<font color="red">支出</font></td>
         </tr>
 <tr><td bgcolor="#FFFFFF">
-<form id="form2" name="myform2" method="get" onsubmit="return checkpost2();">
+<form id="form2" name="myform2" method="post" onsubmit="return checkpost2();">
           　<font color="red">金额：</font><input name="money" type="number" id="money" size="8" /><div style="display:none;"><input name="zhifu" type="text" id="zhifu" value="2" size="8" /></div>
           　<font color="red">分类：</font><select name="classid" id="classid" style="height:26px;">
               <?php
@@ -71,7 +71,7 @@ if($_POST[Submit]){
 		<td bgcolor="#EBEBEB">　<font color="MediumSeaGreen">收入</font></td>
         </tr>
  <tr><td bgcolor="#FFFFFF">
-<form id="form" name="myform" method="get" onsubmit="return checkpost();">
+<form id="form" name="myform" method="post" onsubmit="return checkpost();">
           　<font color="MediumSeaGreen">金额：</font>
             <input name="money" type="text" id="money" value="" size="8" /><div style="display:none;"><input name="zhifu" type="text" id="zhifu" value="1" size="8" /></div>
          　<font color="MediumSeaGreen">分类：</font>
