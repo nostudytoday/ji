@@ -61,7 +61,7 @@ if($_POST[Submit]){
               </select> <font color="red"><a href="fenlei.php" style="color:#ccc;">添加分类</a></font>
           <br /><br />　备注：
             <input name="remark" type="text" id="remark" /> <font color="#ccc">方便搜索</font>
-         <br /><br />　时间：<input type="date" name="time" id="time" value="<?php $xz=date("Y-m-d H:i");;echo "$xz"; ?>"/>
+         <br /><br />　时间：<input type="text" name="time" id="time" value="<?php $xz=date("Y-m-d H:i");;echo "$xz"; ?>"/>
             <input name="Submit" type="submit" id="Submit" value="记账" /> <a href="piliangtianjia.php" style="color:#ccc;">批量</a>
   </form>
 </td></tr>
@@ -86,7 +86,7 @@ if($_POST[Submit]){
               </select> <font color="MediumSeaGreen"><a href="fenlei.php" style="color:#ccc;">添加分类</a></font>
           <br /><br />　备注：
             <input name="remark" type="text" id="remark" /> <font color="#ccc">方便搜索</font>
-          <br /><br />　时间：<input type="date" name="time" id="time" value="<?php $xz=date("Y-m-d H:i");;echo "$xz"; ?>"/>
+          <br /><br />　时间：<input type="text" name="time" id="time" value="<?php $xz=date("Y-m-d H:i");;echo "$xz"; ?>"/>
             <input type="submit" name="Submit" value="记账" /> <a href="piliangtianjia.php" style="color:#ccc;">批量</a>
  </form>
         
