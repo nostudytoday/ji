@@ -1,7 +1,6 @@
 <?php
 session_start();
 include("config.php");
-mysql_set_charset("utf8");
 $arr=user_shell($_SESSION['uid'],$_SESSION['user_shell']);//对权限进行判断
 /**
  * @

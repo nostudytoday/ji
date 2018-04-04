@@ -32,9 +32,9 @@ function checkpost2()
 $income=0;
 $spending=0;
 //检查是否记账并执行
-if($_GET[Submit]){
-	$time100=strtotime($_GET[time]);
-	$sql="insert into jizhang_account (acmoney, acclassid, actime, acremark,jiid,zhifu) values ('$_GET[money]', '$_GET[classid]', '$time100', '$_GET[remark]', '$_SESSION[uid]', '$_GET[zhifu]')";
+if($_POST[Submit]){
+	$time100=strtotime($_POST[time]);
+	$sql="insert into jizhang_account (acmoney, acclassid, actime, acremark,jiid,zhifu) values ('$_POST[money]', '$_POST[classid]', '$time100', '$_POST[remark]', '$_SESSION[uid]', '$_POST[zhifu]')";
 	$query=mysql_query($sql);
 	if($query)
 		$prompttext="<font color='#009900'>OK，记完了！</font>";
