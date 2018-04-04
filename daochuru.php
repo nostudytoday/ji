@@ -1,7 +1,7 @@
 <?php
 session_start();
 include("config.php");
-ini_set(default_charset, "");
+mysql_set_charset("utf8");
 $arr=user_shell($_SESSION['uid'],$_SESSION['user_shell']);//对权限进行判断
 /**
  * @
@@ -86,7 +86,7 @@ if ($action == 'import') { //导入CSV
         $fenlei = iconv('utf-8','gb2312',$classinfo['classname']);
         if($classinfo[classtype]==1){$shouzhi=iconv('utf-8','gb2312',"收入");}else{$shouzhi=iconv('utf-8','gb2312',"支出");}
     $jine = $row['acmoney'];
-        $shijian = date("Y-m-d H:i",$row[actime]);
+        $shijian = date("Y-m-d",$row[actime]);
     $beizhu = iconv('utf-8','gb2312',$row[acremark]);
       $str .= $fenlei.",".$shouzhi.",".$jine.",".$shijian.",".$beizhu."\n";
     }
