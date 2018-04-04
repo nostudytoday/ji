@@ -43,7 +43,7 @@ $arr=user_shell($_SESSION['uid'],$_SESSION['user_shell']);//对权限进行判�
 			<li><a href="tongji.php">近期统计</a></li>
 			<li><a href="niantongji.php">全年统计</a></li>
 			<li><a href="fenlei.php">分类编辑</a></li>
-<li><a href="chaxun.php">导出导出</a></li>
+<li><a href="chaxun.php">导入导出</a></li>
 <li><a href="xiugai.php">查询修改</a></li>
 <li><a href="zhanghao.php"><?php echo"账号：";echo $arr['username'];?></a></li>
 <li><a href="index.php?tj=logout">退出</a></li>
