@@ -1,6 +1,7 @@
 <?php
 session_start();
 include("config.php");
+ini_set(default_charset, "");
 $arr=user_shell($_SESSION['uid'],$_SESSION['user_shell']);//对权限进行判断
 /**
  * @
@@ -77,16 +78,16 @@ if ($action == 'import') { //导入CSV
 } elseif ($action=='export') { //导出CSV
     $result = mysql_query("select acclassid,zhifu,acmoney,actime,acremark from jizhang_account where jiid='$_SESSION[uid]'");
     $str = "分类,收支,金额,时间,备注\n";
-
+    $str = iconv('utf-8','gb2312',$str);
     while($row=mysql_fetch_array($result)){
     $sql="select * from jizhang_account_class where classid=$row[acclassid] and ufid='$_SESSION[uid]'";
         $classquery=mysql_query($sql);
         $classinfo = mysql_fetch_array($classquery);
-        $fenlei = $classinfo['classname'];
-        if($classinfo[classtype]==1){$shouzhi="收入";}else{$shouzhi="支出";}
+        $fenlei = iconv('utf-8','gb2312',$classinfo['classname']);
+        if($classinfo[classtype]==1){$shouzhi=iconv('utf-8','gb2312',"收入");}else{$shouzhi=iconv('utf-8','gb2312',"支出");}
     $jine = $row['acmoney'];
         $shijian = date("Y-m-d H:i",$row[actime]);
-    $beizhu = $row[acremark];
+    $beizhu = iconv('utf-8','gb2312',$row[acremark]);
       $str .= $fenlei.",".$shouzhi.",".$jine.",".$shijian.",".$beizhu."\n";
     }
     $filename = date('Ymd').'.csv';
